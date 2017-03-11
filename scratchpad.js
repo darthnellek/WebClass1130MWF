@@ -10,4 +10,15 @@
 document.title="This is a New Title from JavaScript!!"
 
 var div = document.createElement('div');
+div.style.width = "100px";
+div.style.height = "100px";
+div.style.background = "red";
+div.style.color = "white";
+div.innerHTML = "Hello";
 document.body.appendChild(div);
+
+var style = document.createElement('style');
+style.textContent =
+  ".div {"+
+  "background-color: yellow;"+
+  "}";
