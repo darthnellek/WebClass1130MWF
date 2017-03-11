@@ -9,16 +9,29 @@
 
 document.title="This is a New Title from JavaScript!!"
 
-var div = document.createElement('div');
-div.style.width = "100px";
-div.style.height = "100px";
-div.style.background = "red";
-div.style.color = "white";
-div.innerHTML = "Hello";
-document.body.appendChild(div);
 
 var style = document.createElement('style');
 style.textContent =
-  ".div {"+
-  "background-color: yellow;"+
+  ".jblue {"+
+  "text-align: center;"+
   "}";
+
+var makeDiv = function(color, id, text) {
+	return function() {
+		var div = document.createElement('div');
+    div.style.width = "100%";
+		
+		div.setAttribute('class', color);
+		div.setAttribute('id', id);
+		div.style.height = "100%";
+    div.style.background = "blue";
+		div.style.opacity = "0.2";
+		div.style.color = "white";
+    div.innerHTML = text;
+		div.style.textAlign = "center";
+		document.body.appendChild(div);
+	}
+}
+
+var blueDiv = makeDiv('blue', 'fib', 'this a test');
+blueDiv();
