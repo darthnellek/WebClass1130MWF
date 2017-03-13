@@ -9,13 +9,15 @@
 
 document.title="This is a New Title from JavaScript!!"
 
+var div = document.createElement('div');
+document.body.appendChild(div);
 
 var style = document.createElement('style');
 style.textContent =
-  ".jblue {"+
-  "text-align: center;"+
+  ".blue {"+
+  "border-color: rgb(0,255,0);"+
   "}";
-
+document.querySelector('body').appendChild(style);
 var makeDiv = function(color, id, text) {
 	return function() {
 		var div = document.createElement('div');
@@ -35,3 +37,9 @@ var makeDiv = function(color, id, text) {
 
 var blueDiv = makeDiv('blue', 'fib', 'this a test');
 blueDiv();
+
+
+/*
+Exception: ReferenceError: div is not defined
+@Scratchpad/1:13:5
+*/
