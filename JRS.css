@@ -1,0 +1,13 @@
+.fibBar{
+    border: solid;
+    color: red;
+}
+.pelBar{
+    border: solid;
+      color: blue;
+}
+.triBar{
+    border: solid;
+      color: green;
+}
+.button {border-radius: 12px;}
